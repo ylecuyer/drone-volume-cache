@@ -90,7 +90,7 @@ elif [[ -n "$PLUGIN_RESTORE" && "$PLUGIN_RESTORE" == "true" ]]; then
             mkdir -p "$source_dir" && \
                 rsync -aHA --delete "/cache/$CACHE_PATH/$source" "$source_dir/"
         else
-            echo "No cache for $source"
+            echo "No cache for $source from /cache/$CACHE_PATH/$source/"
         fi
     done
 else
