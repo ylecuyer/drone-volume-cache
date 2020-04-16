@@ -81,11 +81,11 @@ elif [[ -n "$PLUGIN_RESTORE" && "$PLUGIN_RESTORE" == "true" ]]; then
     # Restore from cache
     for source in "${SOURCES[@]}"; do
         if [ -d "/cache/$CACHE_PATH/$source" ]; then
-            echo "Restoring cache for folder $source..."
+            echo "Restoring cache for folder $source... from /cache/$CACHE_PATH/$source/"
             mkdir -p "$source" && \
                 rsync -aHA --delete "/cache/$CACHE_PATH/$source/" "$source"
         elif [ -f "/cache/$CACHE_PATH/$source" ]; then
-            echo "Restoring cache for file $source..."
+            echo "Restoring cache for file $source... from /cache/$CACHE_PATH/$source"
             source_dir=$(dirname $source)
             mkdir -p "$source_dir" && \
                 rsync -aHA --delete "/cache/$CACHE_PATH/$source" "$source_dir/"
